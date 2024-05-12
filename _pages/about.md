@@ -27,4 +27,4 @@ This is a space for me to document my learnings
 
 ### Screenshot
 
-![Screenshot](me.png)
+![Screenshot](assets/favicons/me.png)
