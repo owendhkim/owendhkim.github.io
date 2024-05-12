@@ -3,7 +3,9 @@ layout: page
 title: Hi, my name is Owen Kim
 ---
 
-Sidey is a simple and minimalistic jekyll blogging theme.
+I am a senior majoring in computer science at Iowa State University, looking for a wide range of experience to become more capable developer.
+
+This is a space for me to document my learnings 
 
 ### Features
 
@@ -25,4 +27,4 @@ Sidey is a simple and minimalistic jekyll blogging theme.
 
 ### Screenshot
 
-![Screenshot](screenshot.png)
+![Screenshot](me.png)
