@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Hi, my name is Owen Kim
 ---
 
 Sidey is a simple and minimalistic jekyll blogging theme.
