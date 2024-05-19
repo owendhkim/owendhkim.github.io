@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Difference between font formats
+slug: font format difference
 description: What is the difference between various font formats?
 summary: What is the difference between various font formats?
 comments: true
