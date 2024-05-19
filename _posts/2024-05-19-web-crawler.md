@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Making a search engine researching and planning
+title: Making a search engine
 slug: search engine web crawler
 comments: true
-tags: [search engine][crawler][spider]
+tags: [search engine, crawler, spider]
 ---
 
 This summer, I'm given a task to ship a search engine for my university's website.
