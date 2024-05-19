@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Making a search engine |
+title: Making a search engine | researching and planning
 slug: search engine web crawler
 comments: true
 tags: [search engine, crawler, spider]
