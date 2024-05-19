@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Making a search engine
+title: Making a search engine |
 slug: search engine web crawler
 comments: true
 tags: [search engine, crawler, spider]
@@ -25,6 +25,7 @@ To sum it up in few main points...
 Things to consider
 
 ---VM spec---
+
 Rocky linux 9.3 x86-64
 120GB disk storage 8GB ram
 
