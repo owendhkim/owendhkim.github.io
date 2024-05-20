@@ -10,9 +10,9 @@ This summer, I'm given a task to ship a search engine for my university's websit
 
 After doing some research, I was able to learn the following.
 
-1. When you search something on the search bar, it is not actually searching through the web and delivering you the result, it is bringing up the relative information from the database full of pre-crawled information.
+* When you search something on the search bar, it is not actually searching through the web and delivering you the result, it is bringing up the relative information from the database full of pre-crawled information.
 
-2. That being said, searching something on the search bar is like making a query, and web crawler/spider's job is to crawl the web and store the information in a db(preferably indexed, to deliver the result faster). So when someone seraches, query is made to the db and results are brought up.
+* That being said, searching something on the search bar is like making a query, and web crawler/spider's job is to crawl the web and store the information in a db(preferably indexed, to deliver the result faster). So when someone seraches, query is made to the db and results are brought up.
 
 To sum it up in few main points...
 
