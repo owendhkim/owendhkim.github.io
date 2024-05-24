@@ -26,5 +26,26 @@ conf  docs   LICENSE-binary  LICENSE.txt      NOTICE-binary  plugins
 [cvm_owenk@search-dev apache-nutch-1.20]$ pwd
 /home/cvm_owenk/downloads/apache-nutch-1.20
 ```
-Export PATH variable and set what you copied to be $NUTCH_HOME, do the same for solr.<br>
-HOME directory of a program should be a directory one upper level from bin directory.
+Export PATH variable to your shell configuration by editing .bashrc or .zshrc and set what you copied to be $NUTCH_HOME. HOME directory of a program should be a directory one upper level from bin directory. Do the same for solr.
+```
+export NUTCH_HOME="/home/cvm_owenk/downloads/apache-nutch-1.20"
+export PATH=$NUTCH_HOME/bin:$PATH
+```
+After downloading and exporting PATH variable. Try running nutch and solr to verify it was done correctly.
+```
+[cvm_owenk@search-dev ~]$ solr
+
+Usage: solr COMMAND OPTIONS
+       where COMMAND is one of: start, stop, restart, status, healthcheck, create, create_core, create_collection, delete, version, zk, auth, assert, config,
+...
+
+[cvm_owenk@search-dev ~]$ nutch
+nutch 1.20
+Usage: nutch COMMAND [-Dproperty=value]... [command-specific args]...
+where COMMAND is one of:
+  readdb            read / dump crawl db
+  mergedb           merge crawldb-s, with optional filtering
+...
+```
+## Creating Solr core for nutch
+For faster query Solr will index the crawld results into a db. If you are planning to shard the db you may want to look into Solr collection. Otherwise, creating a core will be sufficient.
