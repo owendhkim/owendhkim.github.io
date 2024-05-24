@@ -12,7 +12,19 @@ Nutch is great for crawling in large scale, and has built in indexer that can be
 
 ## Environment setup
 
+From https://solr.apache.org/downloads and https://nutch.apache.org/download/ get the links for the desired version.
 ```
 $ wget https://www.apache.org/dyn/closer.lua/solr/solr/9.6.0/solr-9.6.0.tgz
 $ wget https://www.apache.org/dyn/closer.lua/nutch/1.20/apache-nutch-1.20-bin.zip
 ```
+Extract the tarball/zip file, cd into the folder and copy pwd.
+
+```
+[cvm_owenk@search-dev apache-nutch-1.20]$ ls
+bin   crawl  lib             licenses-binary  logs           NOTICE.txt  urls
+conf  docs   LICENSE-binary  LICENSE.txt      NOTICE-binary  plugins
+[cvm_owenk@search-dev apache-nutch-1.20]$ pwd
+/home/cvm_owenk/downloads/apache-nutch-1.20
+```
+Export PATH variable and set what you copied to be $NUTCH_HOME, do the same for solr.<br>
+HOME directory of a program should be a directory one upper level from bin directory.
