@@ -49,3 +49,26 @@ where COMMAND is one of:
 ```
 ## Creating Solr core for nutch
 For faster query Solr will index the crawld results into a db. If you are planning to shard the db you may want to look into Solr collection. Otherwise, creating a core will be sufficient.
+
+Create path for nutch core, copy default config into it.
+
+```
+mkdir -p ${SOLR_HOME}/server/solr/configsets/nutch/
+cp -r ${SOLR_HOME}/server/solr/configsets/_default/* ${SOLR_HOME}/server/solr/configsets/nutch/
+```
+
+Check if schema.xml file exists in this path .../src/plugin/indexer-solr/schema.xml<br>
+If it exists copy it to ${SOLR_HOME}/server/solr/configsets/nutch/conf/<br>
+If not, download one from solr github repo.
+```
+$ curl -o schema.xml https://raw.githubusercontent.com/apache/nutch/release-1.16/src/plugin/indexer-solr/schema.xml
+```
+
+Delete managed-schema file if it exists
+```
+rm ${SOLR_HOME}/server/solr/configsets/nutch/conf/managed-schema
+```
+Create nutch core
+```
+${SOLR_HOME}/bin/solr create -c nutch -d ${SOLR_HOME}/server/solr/configsets/nutch/conf/
+```
