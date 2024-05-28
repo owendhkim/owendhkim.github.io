@@ -10,7 +10,7 @@ I'm choosing to test nutch and solr first as they are both from the same company
 
 Nutch is great for crawling in large scale, and has built in indexer that can be pipelined into solr. Both open source.
 
-## Environment setup
+<h2><u>Environment setup</u></h2>
 
 From https://solr.apache.org/downloads and https://nutch.apache.org/download/ get the links for the desired version.
 ```
@@ -47,7 +47,8 @@ where COMMAND is one of:
   mergedb           merge crawldb-s, with optional filtering
 ...
 ```
-## Creating Solr core for nutch
+<h2><u>Creating Solr core for Nutch</u></h2>
+
 For faster query Solr will index the crawld results into a db. If you are planning to shard the db you may want to look into Solr collection. Otherwise, creating a core will be sufficient.
 
 Create path for nutch core, copy default config into it.
@@ -82,7 +83,7 @@ I had to use the command below to forward server's localhost:8983 to client's(me
 ```
 $ ssh -L <local URL>:<local Port>:<remote URL>:<remote Port> <username>@<hostname>
 ```
-## Before crawling
+<h2><u>Before crawling</u></h2>
 We are almost ready to crawl, before crawling we must add the agent name to our .xml file and create a seeds list.
 
 In $NUTCH_HOME/conf directory there should be a nutch-site.xml file, properties added in this file will overwrite the nutch-default.xml file which contains the default setting.<br>
@@ -129,4 +130,6 @@ $ mkdir urls
 $ cd urls
 $ touch seed.txt
 ```
-## Crwaling
+<h2><u>Crawling</u></h2>
+
+There are two binary executables inside the bin directory, you can use bin/nutch to crawl step by step or you can use bin/crawl to set up an automative crawl.
