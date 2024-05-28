@@ -134,6 +134,13 @@ $ touch seed.txt
 
 There are two binary executables inside the bin directory, you can use bin/nutch to crawl step by step or you can use bin/crawl to set up an automative crawl.
 
-Crawling step by step:
-1. inject
-2. fetch
+Crawling step by step:<br>
+From NUTCH_HOME directory
+1. inject seeds `$ bin/nutch inject crawl/crawldb urls`
+2. generate fetch list `$ bin/nutch generate crawl/crawldb crawl/segments`
+3. set target segment directory ``$ s1=`ls -d crawl/segments/2* | tail -1` ``
+4. fetch `$ bin/nutch fetch $s1`
+5. parse fetched data `$ bin/nutch parse $s1`
+6. update db(local db in nutch home) `$ bin/nutch updatedb crawl/crawldb $s1`
+7. invert links in order to index `$ bin/nutch invertlinks crawl/linkdb -dir crawl/segments`
+8. index `$ bin/nutch index crawl/crawldb/ -linkdb crawl/linkdb/ -dir crawl/segments -filter -normalize -deleteGone`
