@@ -26,7 +26,7 @@ conf  docs   LICENSE-binary  LICENSE.txt      NOTICE-binary  plugins
 [cvm_owenk@search-dev apache-nutch-1.20]$ pwd
 /home/cvm_owenk/downloads/apache-nutch-1.20
 ```
-Export PATH variable to your shell configuration by editing .bashrc or .zshrc and set what you copied to be $NUTCH_HOME. HOME directory of a program should be a directory one upper level from bin directory. Do the same for solr.
+Export PATH variable to your shell configuration by editing `.bashrc` or `.zshrc` and set what you copied to be `$NUTCH_HOME`. HOME directory of a program should be a directory one upper level from bin directory. Do the same for solr.
 ```
 export NUTCH_HOME="/home/cvm_owenk/downloads/apache-nutch-1.20"
 export PATH=$NUTCH_HOME/bin:$PATH
@@ -58,8 +58,8 @@ $ mkdir -p ${SOLR_HOME}/server/solr/configsets/nutch/
 cp -r ${SOLR_HOME}/server/solr/configsets/_default/* ${SOLR_HOME}/server/solr/configsets/nutch/
 ```
 
-Check if schema.xml file exists in this path .../src/plugin/indexer-solr/schema.xml<br>
-If it exists copy it to ${SOLR_HOME}/server/solr/configsets/nutch/conf/<br>
+Check if schema.xml file exists in this path `.../src/plugin/indexer-solr/schema.xml`<br>
+If it exists copy it to `${SOLR_HOME}/server/solr/configsets/nutch/conf/`<br>
 If not, download one from solr github repo.
 ```
 $ curl -o schema.xml https://raw.githubusercontent.com/apache/nutch/release-1.16/src/plugin/indexer-solr/schema.xml
@@ -86,8 +86,8 @@ $ ssh -L <local URL>:<local Port>:<remote URL>:<remote Port> <username>@<hostnam
 <h2><u>Before crawling</u></h2>
 We are almost ready to crawl, before crawling we must add the agent name to our .xml file and create a seeds list.
 
-In $NUTCH_HOME/conf directory there should be a nutch-site.xml file, properties added in this file will overwrite the nutch-default.xml file which contains the default setting.<br>
-You are requried to add the http.agent.name value to your nutch-stie.xml file in order to crawl using nutch.
+In `$NUTCH_HOME/conf` directory there should be a `nutch-site.xml` file, properties added in this file will overwrite the `nutch-default.xml` file which contains the default setting.<br>
+You are requried to add the `http.agent.name` value to your `nutch-stie.xml` file in order to crawl using nutch.
 
 ```
 <configuration>
@@ -123,7 +123,7 @@ You are requried to add the http.agent.name value to your nutch-stie.xml file in
 
 </configuration>
 ```
-To create seeds list, cd into $NUTCH_HOME and create a .txt file inside a urls directory, make sure it is formatted to one url per line.
+To create seeds list, cd into `$NUTCH_HOME` and create a .txt file inside a urls directory, make sure it is formatted to one url per line.
 ```
 $ cd $NUTCH_HOME
 $ mkdir urls
@@ -133,3 +133,7 @@ $ touch seed.txt
 <h2><u>Crawling</u></h2>
 
 There are two binary executables inside the bin directory, you can use bin/nutch to crawl step by step or you can use bin/crawl to set up an automative crawl.
+
+Step by step:
+  1. inject
+  2. fetch
