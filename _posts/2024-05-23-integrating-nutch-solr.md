@@ -134,6 +134,6 @@ $ touch seed.txt
 
 There are two binary executables inside the bin directory, you can use bin/nutch to crawl step by step or you can use bin/crawl to set up an automative crawl.
 
-Step by step:
-  1. inject
-  2. fetch
+Crawling step by step:
+1. inject
+2. fetch
