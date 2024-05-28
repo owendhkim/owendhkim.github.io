@@ -53,7 +53,7 @@ For faster query Solr will index the crawld results into a db. If you are planni
 Create path for nutch core, copy default config into it.
 
 ```
-mkdir -p ${SOLR_HOME}/server/solr/configsets/nutch/
+$ mkdir -p ${SOLR_HOME}/server/solr/configsets/nutch/
 cp -r ${SOLR_HOME}/server/solr/configsets/_default/* ${SOLR_HOME}/server/solr/configsets/nutch/
 ```
 
@@ -66,9 +66,67 @@ $ curl -o schema.xml https://raw.githubusercontent.com/apache/nutch/release-1.16
 
 Delete managed-schema file if it exists
 ```
-rm ${SOLR_HOME}/server/solr/configsets/nutch/conf/managed-schema
+$ rm ${SOLR_HOME}/server/solr/configsets/nutch/conf/managed-schema
 ```
 Create nutch core
 ```
 ${SOLR_HOME}/bin/solr create -c nutch -d ${SOLR_HOME}/server/solr/configsets/nutch/conf/
 ```
+Start solr and go on to the admin page (http://localhost:8983/solr/) to verify that solr gui is running and nutch core is created
+
+```
+$ solr restart
+```
+If you are running solr on vm like me, you might have to look into ssh tunneling https://www.ssh.com/academy/ssh/tunneling-example<br>
+I had to use the command below to forward server's localhost:8983 to client's(me) localhost:8983.
+```
+$ ssh -L <local URL>:<local Port>:<remote URL>:<remote Port> <username>@<hostname>
+```
+## Before crawling
+We are almost ready to crawl, before crawling we must add the agent name to our .xml file and create a seeds list.
+
+In $NUTCH_HOME/conf directory there should be a nutch-site.xml file, properties added in this file will overwrite the nutch-default.xml file which contains the default setting.<br>
+You are requried to add the http.agent.name value to your nutch-stie.xml file in order to crawl using nutch.
+
+```
+<configuration>
+
+<property>
+  <name>http.agent.name</name>
+  <value>Your agent name here</value>
+  <description>'User-Agent' name: a single word uniquely identifying your crawler.
+
+  The value is used to select the group of robots.txt rules addressing your
+  crawler. It is also sent as part of the HTTP 'User-Agent' request header.
+
+  This property MUST NOT be empty -
+  please set this to a single word uniquely related to your organization.
+
+  Following RFC 9309 the 'User-Agent' name (aka. 'product token')
+  &quot;MUST contain only uppercase and lowercase letters ('a-z' and
+  'A-Z'), underscores ('_'), and hyphens ('-').&quot;
+
+  NOTE: You should also check other related properties:
+
+    http.robots.agents
+    http.agent.description
+    http.agent.url
+    http.agent.email
+    http.agent.version
+
+  and set their values appropriately.
+  </description>
+</property>
+
+...
+
+</configuration>
+```
+To create seeds list, cd into $NUTCH_HOME and create a .txt file inside a urls directory, make sure it is formatted to one url per line.
+```
+$ cd $NUTCH_HOME
+$ mkdir urls
+$ cd urls
+$ touch seed.txt
+```
+## Crwaling
