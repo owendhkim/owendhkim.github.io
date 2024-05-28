@@ -144,3 +144,42 @@ From NUTCH_HOME directory
 6. update db(local db in nutch home) `$ bin/nutch updatedb crawl/crawldb $s1`
 7. invert links in order to index `$ bin/nutch invertlinks crawl/linkdb -dir crawl/segments`
 8. index `$ bin/nutch index crawl/crawldb/ -linkdb crawl/linkdb/ -dir crawl/segments -filter -normalize -deleteGone`
+
+Using crawl script:
+```
+Usage: crawl [options] <crawl_dir> <num_rounds>
+
+Arguments:
+  <crawl_dir>                           Directory where the crawl/host/link/segments dirs are saved
+  <num_rounds>                          The number of rounds to run this crawl for
+
+Options:
+  -i|--index                            Indexes crawl results into a configured indexer
+  -D                                    A Nutch or Hadoop property to pass to Nutch calls overwriting
+                                        properties defined in configuration files, e.g.
+                                        increase content limit to 2MB:
+                                          -D http.content.limit=2097152
+                                        (distributed mode only) configure memory of map and reduce tasks:
+                                          -D mapreduce.map.memory.mb=4608    -D mapreduce.map.java.opts=-Xmx4096m
+                                          -D mapreduce.reduce.memory.mb=4608 -D mapreduce.reduce.java.opts=-Xmx4096m
+  -w|--wait <NUMBER[SUFFIX]>            Time to wait before generating a new segment when no URLs
+                                        are scheduled for fetching. Suffix can be: s for second,
+                                        m for minute, h for hour and d for day. If no suffix is
+                                        specified second is used by default. [default: -1]
+  -s <seed_dir>                         Path to seeds file(s)
+  -sm <sitemap_dir>                     Path to sitemap URL file(s)
+  --hostdbupdate                        Boolean flag showing if we either update or not update hostdb for each round
+  --hostdbgenerate                      Boolean flag showing if we use hostdb in generate or not
+  --num-fetchers <num_fetchers>         Number of tasks used for fetching (fetcher map tasks) [default: 1]
+                                        Note: This can only be set when running in distributed mode and
+                                              should correspond to the number of worker nodes in the cluster.
+  --num-tasks <num_tasks>               Number of reducer tasks [default: 2]
+  --size-fetchlist <size_fetchlist>     Number of URLs to fetch in one iteration [default: 50000]
+  --time-limit-fetch <time_limit_fetch> Number of minutes allocated to the fetching [default: 180]
+  --num-threads <num_threads>           Number of threads for fetching / sitemap processing [default: 50]
+  --sitemaps-from-hostdb <frequency>    Whether and how often to process sitemaps based on HostDB.
+                                        Supported values are:
+                                          - never [default]
+                                          - always (processing takes place in every iteration)
+                                          - once (processing only takes place in the first iteration)
+```
