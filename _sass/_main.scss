@@ -16,7 +16,7 @@ body {
 }
 
 nav ul {
-    border-right: 1px solid #edf2f7;
+    border-right: 1px solid #000000;
 }
 
 a {
@@ -160,7 +160,7 @@ strong, b {
 main {
 	display:flex;
 	flex-wrap:wrap;
-	max-width:75rem;
+	max-width:70rem;
 	margin:2rem auto;
 	padding:1rem;
 }
@@ -175,7 +175,7 @@ header li {
 	padding-bottom: 1rem;
 }
 header ul {
-	border-bottom: 1px solid #000000;
+	border-bottom: 1px solid #edf2f7;
 	padding-bottom: 2rem;	
 }
 nav ul {
