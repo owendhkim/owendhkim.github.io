@@ -160,7 +160,7 @@ strong, b {
 main {
 	display:flex;
 	flex-wrap:wrap;
-	max-width:70rem;
+	max-width:70rem;so
 	margin:2rem auto;
 	padding:1rem;
 }
@@ -209,38 +209,15 @@ figcaption {
     }
 }
 
-header {
+.social-icons {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #f4f4f4;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.social-icons a {
+    margin: 0 0.5rem;
 }
 
-.social-menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.social-menu li {
-    margin: 0 10px;
-}
-
-.social-menu li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 18px;
-}
-
-.social-menu li a i {
+.social-icons i {
     font-size: 20px;
 }
-
