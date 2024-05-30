@@ -208,3 +208,42 @@ figcaption {
         display: none !important;
     }
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main-menu,
+.social-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu li,
+.social-menu li {
+    margin: 0 10px;
+}
+
+.main-menu li a,
+.social-menu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+
+.social-menu li a i {
+    font-size: 20px;
+}
+
