@@ -14,10 +14,18 @@ Nutch is great for crawling in large scale, and has built in indexer that can be
 
 From https://solr.apache.org/downloads and https://nutch.apache.org/download/ get the links for the desired version.
 ```
-$ wget https://www.apache.org/dyn/closer.lua/solr/solr/9.6.0/solr-9.6.0.tgz
-$ wget https://www.apache.org/dyn/closer.lua/nutch/1.20/apache-nutch-1.20-bin.zip
+$ wget https://archive.apache.org/dist/solr/solr/9.6.0/solr-9.6.0.tgz
+$ wget https://archive.apache.org/dist/nutch/1.20/apache-nutch-1.20-bin.tar.gz
 ```
-Extract the tarball/zip file, cd into the folder and copy pwd.
+Create your working directory and extract solr and nutch tarballs.
+
+```
+$ mkdir downloads
+$ tar -xvzf solr-9.6.0.tgz
+$ tar -xvzf apache-nutch-1.20-bin.tar.gz
+```
+
+cd into the folder and copy pwd.
 
 ```
 [cvm_owenk@search-dev apache-nutch-1.20]$ ls
