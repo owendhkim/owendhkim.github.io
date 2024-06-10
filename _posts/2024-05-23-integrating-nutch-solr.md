@@ -34,10 +34,16 @@ conf  docs   LICENSE-binary  LICENSE.txt      NOTICE-binary  plugins
 [cvm_owenk@search-dev apache-nutch-1.20]$ pwd
 /home/cvm_owenk/downloads/apache-nutch-1.20
 ```
-Export PATH variable to your shell configuration by editing `.bashrc` or `.zshrc` and set what you copied to be `$NUTCH_HOME`. HOME directory of a program should be a directory one upper level from bin directory. Do the same for solr.
+Export PATH variable to your shell configuration by editing `.bashrc` or `.zshrc` and set what you copied to be `$NUTCH_HOME`. HOME directory of a program should be a directory one upper level from bin directory. Do the same for solr, and reload `.bashrc`.
+```
+$ vi ~/.bashrc
+```
 ```
 export NUTCH_HOME="/home/cvm_owenk/downloads/apache-nutch-1.20"
 export PATH=$NUTCH_HOME/bin:$PATH
+```
+```
+$ source ~/.bash_profile
 ```
 After downloading and exporting PATH variable. Try running nutch and solr to verify it was done correctly.
 ```
