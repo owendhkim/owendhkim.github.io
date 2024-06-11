@@ -45,7 +45,7 @@ export PATH=$NUTCH_HOME/bin:$PATH
 ```
 $ source ~/.bash_profile
 ```
-After downloading and exporting PATH variable. Try running nutch and solr to verify it was done correctly.
+After downloading and exporting PATH variable. Try running nutch and solr to verify it was done correctly, you should see help options showing like below.
 ```
 [cvm_owenk@search-dev ~]$ solr
 
@@ -61,6 +61,16 @@ where COMMAND is one of:
   mergedb           merge crawldb-s, with optional filtering
 ...
 ```
+If you get `JAVA_HOME not set` message, run the command `$ which java` to grab the location where java is installed and export it as variable JAVA_HOME on your shell profile, just like other HOME variables, it should be one upper directory from the /bin directory.
+
+```
+[cvm_owenk@search-dev2 apache-nutch-1.20]$ which java
+/usr/bin/java
+
+export JAVA_HOME="/usr"
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
 <h2><u>Creating Solr core for Nutch</u></h2>
 
 For faster query Solr will index the crawld results into a db. If you are planning to shard the db you may want to look into Solr collection. Otherwise, creating a core will be sufficient.
