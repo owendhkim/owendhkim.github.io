@@ -10,15 +10,24 @@ Now we have an indexed database powered by solr, that contains the data gathered
 
 <h2><u>Environment setup</u></h2>
 
-From https://nodejs.org/en/download/package-manager/current
+From `https://nodejs.org/en/download/package-manager/current` select desired version and os, run the commands in command line.
 ```
-$ wget https://archive.apache.org/dist/solr/solr/9.6.0/solr-9.6.0.tgz
-$ wget https://archive.apache.org/dist/nutch/1.20/apache-nutch-1.20-bin.tar.gz
-```
-Create your working directory and extract solr and nutch tarballs.
+# installs nvm (Node Version Manager)
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
+# download and install Node.js (you may need to restart the terminal)
+$ nvm install 22
+
+# verifies the right Node.js version is in the environment
+$ node -v # should print `v22.3.0`
+
+# verifies the right NPM version is in the environment
+$ npm -v # should print `10.8.1`
 ```
-$ mkdir downloads
-$ tar -xvzf solr-9.6.0.tgz
-$ tar -xvzf apache-nutch-1.20-bin.tar.gz
+Npm is node.js package manager and it is included in node.js installation. I will be using solr-node package to connect establish connection between solr and node.js app, in order to make queries. Create and cd into a working directory, install solr-node.
 ```
+$ mkdir site
+$ cd site
+$ npm install solr-node
+```
+Create a server.js file
