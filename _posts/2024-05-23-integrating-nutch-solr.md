@@ -12,7 +12,7 @@ Nutch is great for crawling in large scale, and has built in indexer that can be
 
 <h2><u>Environment setup</u></h2>
 
-From https://solr.apache.org/downloads and https://nutch.apache.org/download/ get the links for the desired version.
+From `https://solr.apache.org/downloads` and `https://nutch.apache.org/download` get the download mirror links for the desired version.
 ```
 $ wget https://archive.apache.org/dist/solr/solr/9.6.0/solr-9.6.0.tgz
 $ wget https://archive.apache.org/dist/nutch/1.20/apache-nutch-1.20-bin.tar.gz
