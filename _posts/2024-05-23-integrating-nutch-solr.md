@@ -69,25 +69,26 @@ Create path for nutch core, copy default config into it.
 
 ```
 $ mkdir -p ${SOLR_HOME}/server/solr/configsets/nutch/
-cp -r ${SOLR_HOME}/server/solr/configsets/_default/* ${SOLR_HOME}/server/solr/configsets/nutch/
+$ cp -r ${SOLR_HOME}/server/solr/configsets/_default/* ${SOLR_HOME}/server/solr/configsets/nutch/
 ```
 
 Check if schema.xml file exists in this path `.../src/plugin/indexer-solr/schema.xml`<br>
 If it exists copy it to `${SOLR_HOME}/server/solr/configsets/nutch/conf/`<br>
 If not, download one from solr github repo.
 ```
-$ curl -o schema.xml https://raw.githubusercontent.com/apache/nutch/release-1.16/src/plugin/indexer-solr/schema.xml
+$ curl -o schema.xml https://raw.githubusercontent.com/apache/nutch/release-1.20/src/plugin/indexer-solr/schema.xml
 ```
 
 Delete managed-schema file if it exists
 ```
 $ rm ${SOLR_HOME}/server/solr/configsets/nutch/conf/managed-schema
 ```
-Create nutch core
+Start solr and create nutch core
 ```
-${SOLR_HOME}/bin/solr create -c nutch -d ${SOLR_HOME}/server/solr/configsets/nutch/conf/
+$ solr start
+$ ${SOLR_HOME}/bin/solr create -c nutch -d ${SOLR_HOME}/server/solr/configsets/nutch/conf/
 ```
-Start solr and go on to the admin page (http://localhost:8983/solr/) to verify that solr gui is running and nutch core is created
+Restart solr and go on to the admin page (http://localhost:8983/solr/) to verify that solr gui is running and nutch core is created
 
 ```
 $ solr restart
