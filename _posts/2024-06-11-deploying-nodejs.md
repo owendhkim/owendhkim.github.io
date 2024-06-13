@@ -24,10 +24,12 @@ $ node -v # should print `v22.3.0`
 # verifies the right NPM version is in the environment
 $ npm -v # should print `10.8.1`
 ```
-Npm is node.js package manager and it is included in node.js installation. I will be using solr-node package to connect establish connection between solr and node.js app, in order to make queries. Create and cd into a working directory, install solr-node.
+Npm is node.js package manager and it is included in node.js installation. I will be using solr-node package to connect establish connection between solr and node.js app, in order to make queries. Create and cd into a working directory, install solr-node, as well as express and log4js.
 ```
 $ mkdir site
 $ cd site
 $ npm install solr-node
+$ npm install express
+$ npm install log4js
 ```
 Create a server.js file
