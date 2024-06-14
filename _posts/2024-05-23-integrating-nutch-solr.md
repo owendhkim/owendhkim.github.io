@@ -91,7 +91,8 @@ $ curl -o schema.xml https://raw.githubusercontent.com/apache/nutch/release-1.20
 
 Delete managed-schema file if it exists
 ```
-$ rm ${SOLR_HOME}/server/solr/configsets/nutch/conf/managed-schema
+$ cd ${SOLR_HOME}/server/solr/configsets/nutch/conf/
+$ rm managed-schema.xml
 ```
 Start solr and create nutch core
 ```
